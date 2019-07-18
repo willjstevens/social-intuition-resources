@@ -1,0 +1,74 @@
+
+drop trigger si_update_trig_config on config;
+drop trigger si_update_trig_user on public."user";
+drop trigger si_update_trig_cohort on cohort;
+drop trigger si_update_trig_intuition on intuition;
+drop trigger si_update_trig_prediction_choice on prediction_choice;
+drop trigger si_update_trig_cohort_intuition_prediction on cohort_intuition_prediction;
+drop trigger si_update_trig_intuition_like on intuition_like;
+drop trigger si_update_trig_intuition_comment on intuition_comment;
+drop trigger si_update_trig_intuition_comment_like on intuition_comment_like;
+drop trigger si_update_trig_outcome_like on outcome_like;
+drop trigger si_update_trig_outcome_comment on outcome_comment;
+drop trigger si_update_trig_outcome_comment_like on outcome_comment_like;
+drop function public.si_update_trig_func();
+
+alter table public.system_notification_history drop constraint system_notification_id_const;
+alter table public.cohort drop constraint inviter_user_id_const;
+alter table public.cohort drop constraint consenter_user_id_const;
+alter table public.intuition drop constraint user_id_const;
+alter table public.intuition drop constraint prediction_choice_id_const;
+alter table public.intuition drop constraint correct_prediction_choice_id_const;
+alter table public.prediction_choice drop constraint intuition_id_const;
+alter table public.prediction_choice drop constraint contributor_user_id_const;
+alter table public.cohort_intuition_prediction drop constraint intuition_id_const;
+alter table public.cohort_intuition_prediction drop constraint user_id_const;
+alter table public.cohort_intuition_prediction drop constraint prediction_choice_id_const;
+alter table public.intuition_like drop constraint intuition_id_const;
+alter table public.intuition_like drop constraint user_id_const;
+alter table public.intuition_comment drop constraint intuition_id_const;
+alter table public.intuition_comment drop constraint user_id_const;
+alter table public.intuition_comment_like drop constraint intuition_id_const;
+alter table public.intuition_comment_like drop constraint user_id_const;
+alter table public.intuition_comment_like drop constraint intuition_comment_id_const;
+alter table public.outcome_like drop constraint intuition_id_const;
+alter table public.outcome_like drop constraint user_id_const;
+alter table public.outcome_comment drop constraint intuition_id_const;
+alter table public.outcome_comment drop constraint user_id_const;
+alter table public.outcome_comment_like drop constraint intuition_id_const;
+alter table public.outcome_comment_like drop constraint user_id_const;
+alter table public.outcome_comment_like drop constraint outcome_comment_id_const;
+
+drop table public."config";
+drop table public."system_notification_history";
+drop table public."system_notification";
+drop table public."user";
+drop table public."cohort";
+drop table public."intuition";
+drop table public."prediction_choice";
+drop table public."cohort_intuition_prediction";
+drop table public."intuition_like";
+drop table public."intuition_comment";
+drop table public."intuition_comment_like";
+drop table public."outcome_like";
+drop table public."outcome_comment";
+drop table public."outcome_comment_like";
+drop table public."feedback";
+
+drop sequence public.config_id_seq;
+drop sequence public.system_notification_history_id_seq;
+drop sequence public.system_notification_id_seq;
+drop sequence public.user_id_seq;
+drop sequence public.cohort_id_seq;
+drop sequence public.intuition_id_seq;
+drop sequence public.prediction_choice_id_seq;
+drop sequence public.cohort_intuition_prediction_id_seq;
+drop sequence public.intuition_like_id_seq;
+drop sequence public.intuition_comment_id_seq;
+drop sequence public.intuition_comment_like_id_seq;
+drop sequence public.outcome_like_id_seq;
+drop sequence public.outcome_comment_id_seq;
+drop sequence public.outcome_comment_like_id_seq;
+drop sequence public.feedback_id_seq;
+
+
